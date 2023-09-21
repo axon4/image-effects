@@ -14,8 +14,9 @@
 
 	fileReader.onloadend = () => {
 		const base64 = fileReader.result.replace(/^data:image\/png;base64,/, '');
+		const dataURL = rust.greyscale(base64);
 
-		rust.greyscale(base64);
+		document.getElementsByTagName('img')[0].src = dataURL;
 	};
 
 	inPut.addEventListener('change', () => {fileReader.readAsDataURL(inPut.files[0])});
