@@ -2,6 +2,7 @@ use wasm_bindgen::prelude::wasm_bindgen;
 use web_sys::console::log_1 as log;
 use base64::decode;
 use image::load_from_memory;
+use image::ImageOutputFormat::Png as PNG;
 
 #[wasm_bindgen]
 pub fn greyscale(encoded_image: &str) {
@@ -15,4 +16,9 @@ pub fn greyscale(encoded_image: &str) {
 
 	image = image.grayscale();
 	log(&"image greyScaled".into());
+
+	let mut buffer = vec![];
+
+	image.write_to(&mut buffer, PNG).unwrap();
+	log(&"image buffered".into());
 }
