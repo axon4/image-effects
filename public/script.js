@@ -1,4 +1,16 @@
-(function () {
+(async function () {
+    let rust;
+
+    try {
+        rust = await import('../pkg');
+    } catch (error) {
+        console.error(error);
+
+        return;
+    };
+
+    console.log(rust);
+
     const inPut = document.getElementsByTagName('input')[0];
     const fileReader = new FileReader();
 
