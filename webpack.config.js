@@ -9,7 +9,10 @@ module.exports = {
 		filename: 'script.js'
 	},
 	plugins: [
-		new HTMLWebPackPlugIn({template: './public/index.html'}),
+		new HTMLWebPackPlugIn({
+			template: './public/index.html',
+			favicon: './public/favicon.ico'
+		}),
 		new WASMPackPlugIn({crateDirectory: path.resolve(__dirname, './')})
 	],
 	experiments: {asyncWebAssembly: true}
