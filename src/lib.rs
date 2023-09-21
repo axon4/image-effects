@@ -10,6 +10,9 @@ pub fn greyscale(encoded_image: &str) {
 	let base64_to_vector = decode(encoded_image).unwrap();
 	log(&"image deCoded".into());
 
-	let image = load_from_memory(&base64_to_vector).unwrap();
+	let mut image = load_from_memory(&base64_to_vector).unwrap();
 	log(&"image loaded".into());
+
+	image = image.grayscale();
+	log(&"image greyScaled".into());
 }
