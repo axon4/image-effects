@@ -1,7 +1,7 @@
-# Image Effects
+# Image-Effects
 
-* Apply effects to upLoaded images.
-* Uses Rust and WebAssembly to process images.
+* change look of upLoaded images through effect-application
+* uses Rust & WebAssembly to process images
 
 ## Stack
 

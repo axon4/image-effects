@@ -1,13 +1,15 @@
 {
 	"name": "image-effects",
-	"version": "0.1.0",
+	"version": "0.0.1",
 	"scripts": {
 		"start": "webpack serve --mode=development",
 		"build": "webpack --mode=production",
-		"deploy": "git subtree push --prefix dist origin deploy"
+		"predePloy": "npm run build",
+		"dePloy": "gh-pages -d dist -m \"dePloy\" -b dePloy"
 	},
 	"devDependencies": {
 		"@wasm-tool/wasm-pack-plugin": "^1.7.0",
+		"gh-pages": "^6.0.0",
 		"html-webpack-plugin": "^5.5.3",
 		"webpack": "^5.88.2",
 		"webpack-cli": "^5.1.4",
